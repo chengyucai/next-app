@@ -4,7 +4,7 @@ import Head from "next/head";
 import Nav from "../components/nav";
 import "./style.scss";
 
-const Home =  ()  => (
+const Home = () => (
   <div>
     <Head>
       <title> Home </title>
@@ -18,11 +18,8 @@ const Home =  ()  => (
         To get started, edit <code>pages/index.js</code> and save to reload.
       </p>
 
-      <div className="row">
-
-      </div>
+      <div className="row"></div>
     </div>
-
   </div>
 );
 
