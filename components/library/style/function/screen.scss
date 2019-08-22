@@ -1,0 +1,15 @@
+@mixin phone {
+    @media screen and (max-width: $screen-md) {
+        @content
+    }
+}
+
+;
+
+@mixin pc {
+    @media screen and (min-width: $screen-md-min) {
+        @content
+    }
+}
+
+;

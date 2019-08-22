@@ -1,0 +1,33 @@
+$screen-xs : 320px !default;
+$screen-xs-min : $screen-xs !default;
+
+$screen-sm : 768px !default;
+$screen-sm-min : $screen-sm !default;
+
+$screen-md : 980px !default;
+$screen-md-min : $screen-md !default;
+
+$screen-lg : 1280px !default;
+$screen-lg-min : $screen-lg !default;
+
+// Container 大小
+$container-sm : $screen-sm-min !default;
+$container-md : 960px !default;
+$container-lg : 1200px !default;
+
+$screen-xs-max : ($screen-sm-min - 1) !default;
+$screen-sm-max : ($screen-md-min - 1) !default;
+$screen-md-max : ($screen-lg-min - 1) !default;
+
+
+// 給Media Query 或 Breakpoint 設定用的變數
+$screen-phone : $screen-xs-min !default;
+$screen-tablet : $screen-sm-min !default;
+$screen-desktop : $screen-md-min !default;
+$screen-lg-desktop : $screen-lg-min !default;
+
+$screen-phone-max : $screen-xs-max !default;
+$screen-tablet-max : $screen-sm-max !default;
+$screen-desktop-max : $screen-md-max !default;
+
+$font-size : 16px;

@@ -1,0 +1,25 @@
+@import '@components/library/style/core/var.scss';
+@import '@components/library/style/core/font.scss';
+@import '@components/library/style/function/flex.scss';
+@import '@components/library/style/function/screen.scss';
+
+$classname: 'int_cbox_preview';
+
+.#{$classname} {
+    &.module {
+        padding: 10pt;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10pt;
+        width: 100%;
+
+        >div {
+            @include flexct;
+            flex-flow: column;
+
+        }
+    }
+
+}
+
+;

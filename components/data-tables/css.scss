@@ -1,0 +1,121 @@
+@import '@components/library/style/core/var.scss';
+@import '@components/library/style/function/flex.scss';
+@import '@components/library/style/function/screen.scss';
+
+
+
+/**
+ * Define your classname
+ */
+$classname: 'data-tables';
+
+/**
+ * Start your css code
+ * 1. 請在您模組的所有selector都要以模組的classname為前綴名稱  (範例:'bc_coxx')
+ * 2. 在設計RWD時，請在每個selector內加上media query，而不是在media query內有selector
+ * 3. 下media query時請依手機優先的設計方法來設計
+ */
+$Container:rgba(54, 54, 64, 1);
+$Header_text: rgba(255, 255, 255, 0.6);
+$Table_text: rgba(255, 255, 255, 1);
+$Divider: rgba(255, 255, 255, 0.12);
+$Rally_green: #1eb980;
+
+%th_td {
+    padding: 0 16px;
+    font-weight: 100;
+    text-align: center;
+
+    &.number {
+
+        @include pc {
+            text-align: right;
+        }
+
+    }
+
+    &.string {
+
+        @include pc {
+            text-align: left;
+        }
+
+    }
+
+    &.boolean {
+        @include flexcc;
+    }
+
+    @include pc {
+        text-align: left;
+    }
+
+    @extend %checkbox;
+}
+
+%checkbox {
+    .check_box {
+        margin: 0 12px;
+        border: solid 2px $Table_text;
+        background-color: $Rally_green;
+
+        .ic_xicn.x1 {
+            color: $Table_text;
+        }
+
+        &.none {
+            background-color: $Container;
+        }
+    }
+}
+
+.#{$classname} {
+
+    border-radius: 3px;
+    overflow: hidden;
+    width: fit-content;
+
+    >table {
+
+        background-color: $Container;
+
+
+
+        >tr {
+
+            border-bottom: solid 0.8px $Divider;
+
+            td {
+                color: $Table_text;
+                height: 56px;
+                @extend %th_td;
+
+
+
+            }
+
+            th {
+                height: 52px;
+                color: $Header_text;
+                @extend %th_td;
+            }
+        }
+
+
+    }
+
+    @media screen and (min-width: $screen-tablet) {
+        // style on tablet device
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+        // style on desktop device
+    }
+
+    @media screen and (min-width: $screen-lg-desktop) {
+        // style on desktop device
+    }
+
+
+
+}

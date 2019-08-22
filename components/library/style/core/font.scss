@@ -1,0 +1,48 @@
+@mixin font--size {
+    font-size: $font-size;
+
+    &.x75 {
+        font-size: calc(#{$font-size} * 0.75);
+    }
+
+    &.x85 {
+        font-size: calc(#{$font-size} * 0.85);
+    }
+
+    &.x12 {
+        font-size: calc(#{$font-size} * 1.2);
+    }
+
+    &.x125 {
+        font-size: calc(#{$font-size} * 1.25);
+    }
+
+    &.x135 {
+        font-size: calc(#{$font-size} * 1.35);
+    }
+
+    &.x15 {
+        font-size: calc(#{$font-size} * 1.5);
+    }
+
+    &.x16 {
+        font-size: calc(#{$font-size} * 1.6);
+    }
+
+    &.x2 {
+        font-size: calc(#{$font-size} * 2);
+    }
+
+    &.x3 {
+        font-size: calc(#{$font-size} * 3);
+    }
+
+    &.x4 {
+        font-size: calc(#{$font-size} * 4);
+    }
+
+    &.x5 {
+        font-size: calc(#{$font-size} * 5);
+    }
+
+}
