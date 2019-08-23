@@ -1,5 +1,6 @@
 import App, { Container } from "next/app";
 import React from "react";
+import Router from "@components/router";
 
 interface MyApp_props extends App {
   Component?: any;
@@ -11,6 +12,7 @@ const MyApp: React.FC<MyApp_props> = props => {
   console.log("_app");
   return (
     <Container>
+      <Router />
       <Component {...pageProps} />
     </Container>
   );

@@ -5,7 +5,7 @@ const req = require.context("../components", true, /preview.tsx$/);
 
 function loadStories() {
   req.keys().forEach(filename => req(filename));
-  reqMagaele.keys().forEach(filename => reqMagaele(filename));
+  // reqMagaele.keys().forEach(filename => reqMagaele(filename));
 }
 
 configure(loadStories, module);
