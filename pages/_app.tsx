@@ -13,6 +13,7 @@ const MyApp: React.FC<MyApp_props> = props => {
   return (
     <Container>
       <Router />
+
       <Component {...pageProps} />
     </Container>
   );

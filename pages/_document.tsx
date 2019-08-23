@@ -32,7 +32,9 @@ class MyDocument extends Document {
     console.log("_document");
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <style>{`body { margin: 0 } /* custom! */`}</style>
+        </Head>
         <body>
           <Main />
           <NextScript />

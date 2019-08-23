@@ -4,14 +4,14 @@ import classNames from "classnames";
 import "./css.scss";
 
 const About = () => {
-  const classnames = "about_";
+  const classnames = "terms_";
 
   return (
     <div className={classNames(classnames)}>
       <Head>
-        <title>關於我們</title>
+        <title>會員條款頁</title>
       </Head>
-      <div className="title">關於我們</div>
+      <div className="title">會員條款頁</div>
     </div>
   );
 };

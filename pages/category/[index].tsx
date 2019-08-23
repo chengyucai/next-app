@@ -2,16 +2,16 @@ import * as React from "react";
 import Head from "next/head";
 import classNames from "classnames";
 import "./css.scss";
-
+import { useRouter } from "next/router";
 const About = () => {
-  const classnames = "about_";
-
+  const classnames = "category_";
+  const router = useRouter();
   return (
     <div className={classNames(classnames)}>
       <Head>
-        <title>關於我們</title>
+        <title>{router.query.index}分類頁</title>
       </Head>
-      <div className="title">關於我們</div>
+      <div className="title">{router.query.index}分類頁</div>
     </div>
   );
 };
