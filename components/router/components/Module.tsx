@@ -1,6 +1,8 @@
 import * as React from "react";
 import classNames from "classnames";
 import Link from "next/link";
+import Btn from "@components/bt_bsic/";
+import { Mode } from "@components/bt_bsic/components/Module";
 import "../css.scss";
 
 const Module = () => {
@@ -11,27 +13,39 @@ const Module = () => {
       subMenu: [
         {
           title: "Home",
-          path: "/"
+          link: {
+            href: "/"
+          }
         },
         {
           title: "關於我們",
-          path: "/about"
+          link: {
+            href: "/about"
+          }
         },
         {
           title: "會員條款頁",
-          path: "/terms"
+          link: {
+            href: "/terms"
+          }
         },
         {
           title: "常見問題",
-          path: "/faq"
+          link: {
+            href: "/faq"
+          }
         },
         {
           title: "聯絡我們頁",
-          path: "/contactUs"
+          link: {
+            href: "/contactUs"
+          }
         },
         {
           title: "隱私權政策",
-          path: "/privacy"
+          link: {
+            href: "/privacy"
+          }
         }
       ]
     },
@@ -40,15 +54,24 @@ const Module = () => {
       subMenu: [
         {
           title: "照片分類頁",
-          path: "/category/photo"
+          link: {
+            href: "/category/[index]",
+            as: "/category/photo"
+          }
         },
         {
           title: "影片分類頁",
-          path: "/category/video"
+          link: {
+            href: "/category/[index]",
+            as: "/category/video"
+          }
         },
         {
           title: "文章分類頁",
-          path: "/category/article"
+          link: {
+            href: "/category/[index]",
+            as: "/category/article"
+          }
         }
       ]
     },
@@ -58,11 +81,15 @@ const Module = () => {
       subMenu: [
         {
           title: "收藏列表頁",
-          path: "/collectionTable"
+          link: {
+            href: "/collectionTable"
+          }
         },
         {
           title: "收藏列表頁-資料夾瀏覽",
-          path: "/collectionBrowse"
+          link: {
+            href: "/collectionBrowse"
+          }
         }
       ]
     },
@@ -72,15 +99,21 @@ const Module = () => {
       subMenu: [
         {
           title: "照片搜尋頁",
-          path: "/search/photo"
+          link: {
+            href: "/search/photo"
+          }
         },
         {
           title: "影片搜尋頁",
-          path: "/search/video"
+          link: {
+            href: "/search/video"
+          }
         },
         {
           title: "文章搜尋頁",
-          path: "/search/article"
+          link: {
+            href: "/search/article"
+          }
         }
       ]
     },
@@ -89,15 +122,24 @@ const Module = () => {
       subMenu: [
         {
           title: "照片商品頁",
-          path: "/product/photo"
+          link: {
+            href: "/product/[index]?id=P00001",
+            as: "/product/photo?id=P00001"
+          }
         },
         {
           title: "影片商品頁",
-          path: "/product/video"
+          link: {
+            href: "/product/[index]?id=V00002",
+            as: "/product/video?id=V00002"
+          }
         },
         {
           title: "文章商品頁",
-          path: "/product/article"
+          link: {
+            href: "/product/[index]?id=A00003",
+            as: "/product/article?id=A00003"
+          }
         }
       ]
     },
@@ -106,15 +148,21 @@ const Module = () => {
       subMenu: [
         {
           title: "使用現況",
-          path: "/status"
+          link: {
+            href: "/status"
+          }
         },
         {
           title: "下載紀錄",
-          path: "/download"
+          link: {
+            href: "/download"
+          }
         },
         {
           title: "訂單查詢",
-          path: "/order"
+          link: {
+            href: "/order"
+          }
         }
       ]
     },
@@ -123,19 +171,27 @@ const Module = () => {
       subMenu: [
         {
           title: "主題推薦",
-          path: "/recommend/"
+          link: {
+            href: "/recommend/"
+          }
         },
         {
           title: "推薦照片",
-          path: "/recommend/photo"
+          link: {
+            href: "/recommend/photo"
+          }
         },
         {
           title: "推薦影片",
-          path: "/recommend/video"
+          link: {
+            href: "/recommend/video"
+          }
         },
         {
           title: "推薦文章",
-          path: "/recommend/article"
+          link: {
+            href: "/recommend/article"
+          }
         }
       ]
     },
@@ -144,62 +200,84 @@ const Module = () => {
       subMenu: [
         {
           title: "素材購物車",
-          path: "/cart"
+          link: {
+            href: "/cart"
+          }
         },
         {
           title: "素材結帳",
-          path: "/checkouting"
+          link: {
+            href: "/checkouting"
+          }
         },
         {
           title: "素材結帳完成",
-          path: "/checkouted"
+          link: {
+            href: "/checkouted"
+          }
         },
         {
           title: "素材訂單明細",
-          path: "/checkouted"
+          link: {
+            href: "/checkouted"
+          }
         },
         {
           title: "方案購物車",
-          path: "/cart/plan"
+          link: {
+            href: "/cart/plan"
+          }
         },
         {
           title: "方案結帳",
-          path: "/checkouting/plan"
+          link: {
+            href: "/checkouting/plan"
+          }
         },
         {
           title: "方案結帳完成",
-          path: "/checkouted/plan"
+          link: {
+            href: "/checkouted/plan"
+          }
         },
         {
           title: "方案訂單明細",
-          path: "/checkouted/plan"
+          link: {
+            href: "/checkouted/plan"
+          }
         },
         {
           title: "方案訂單退款",
-          path: "/checkouted/plan"
+          link: {
+            href: "/checkouted/plan"
+          }
         }
       ]
     }
   ];
   return (
     <div className={classNames(classname)}>
-      {PageList.map((table: any, index: number) => {
-        const Menu = table.subMenu.map((data: any, index: number) => {
-          return (
-            <div key={index}>
-              <Link href={data.path}>
-                <a>{data.title}</a>
-              </Link>
-            </div>
-          );
-        });
-        return (
-          <div key={index}>
-            <div>{table.cate}</div>
-            {Menu}
-          </div>
-        );
-      })}
+      <Btn word={"Slide"} mode={Mode.Contained} />
+      <div className={classNames(`${classname}-list`)}>
+        {PageList.map((table: any) => {
+          // const Menu = table.subMenu.map((data: any, index: number) => {
+          return table.subMenu.map((data: any, index: number) => {
+            return (
+              <div key={index}>
+                <Link {...data.link}>
+                  <a>{data.title}</a>
+                </Link>
+              </div>
+            );
+          });
+          // return (
+          //   <>
+          //     <h3 key={index}>{table.cate}</h3>
+          //     {Menu}
+          //   </>
+          // );
+        })}
+      </div>
     </div>
   );
 };

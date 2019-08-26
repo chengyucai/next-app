@@ -6,7 +6,7 @@ const styles = require("./preview.scss");
 
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 
-storiesOf("Cy_C|輸入元件(input)", module)
+storiesOf("輸入元件(input)", module)
   .addDecorator(withKnobs)
   .add("int_cbox", () => {
     const classnames = "int_cbox_preview";

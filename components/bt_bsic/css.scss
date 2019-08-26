@@ -1,0 +1,56 @@
+@import '@components/library/style/core/var.scss';
+@import '@components/library/style/core/font.scss';
+@import '@components/library/style/core/basic.scss';
+@import '@components/library/style/function/flex.scss';
+@import '@components/library/style/function/screen.scss';
+
+
+
+/**
+ * Define your classname
+ */
+$classname: 'bt_bsic';
+
+/**
+ * Start your css code
+ * 1. 請在您模組的所有selector都要以模組的classname為前綴名稱  (範例:'bc_coxx')
+ * 2. 在設計RWD時，請在每個selector內加上media query，而不是在media query內有selector
+ * 3. 下media query時請依手機優先的設計方法來設計
+ */
+
+
+.#{$classname} {
+    
+    color: #000;
+    background-color: #fff0;
+    width: fit-content;
+    width: fit-content;
+    padding: 5px 10px;
+    @include flexcc;
+    display: inline-flex;
+
+    &.Outlined{
+        border: solid 2px #000;
+        padding: 3px 8px;
+    }
+
+    &.Contained{
+        color: #fff;
+        background-color: #000;
+    }
+
+    @media screen and (min-width: $screen-tablet) {
+        // style on tablet device
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+        // style on desktop device
+    }
+
+    @media screen and (min-width: $screen-lg-desktop) {
+        // style on desktop device
+    }
+
+
+
+};

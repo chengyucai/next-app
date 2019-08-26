@@ -10,7 +10,7 @@ import {
   select
 } from "@storybook/addon-knobs";
 
-storiesOf("CY_C|DataTables", module)
+storiesOf("DataTables", module)
   .addDecorator(withKnobs)
   .add(
     "Data_Tables",

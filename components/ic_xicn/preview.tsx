@@ -6,7 +6,7 @@ const styles = require("./preview.scss");
 
 import { withKnobs, text } from "@storybook/addon-knobs";
 
-storiesOf("Cy_C|圖示(iconfont)", module)
+storiesOf("圖示(iconfont)", module)
   .addDecorator(withKnobs)
   .add("ic_xicn", () => {
     const classnames = "ic_xicn_preview";

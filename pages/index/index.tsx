@@ -23,6 +23,7 @@
 import * as React from "react";
 import Head from "next/head";
 import classNames from "classnames";
+import Link from "next/link";
 import "./css.scss";
 // import { useRouter } from "next/router";
 

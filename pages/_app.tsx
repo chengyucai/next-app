@@ -12,7 +12,12 @@ const MyApp: React.FC<MyApp_props> = props => {
   console.log("_app");
   return (
     <Container>
-      <Router />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href={"/_next/static/css/styles.chunk.css?v=" + Date.now()}
+      />
+      {process.env.NODE_ENV === "development" && <Router />}
 
       <Component {...pageProps} />
     </Container>

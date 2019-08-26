@@ -10,7 +10,7 @@ import {
   select
 } from "@storybook/addon-knobs";
 
-storiesOf("CY_C|Photoview", module)
+storiesOf("Photoview", module)
   .addDecorator(withKnobs)
   .add(
     "Photoview",
