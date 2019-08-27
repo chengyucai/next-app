@@ -1,6 +1,5 @@
 require("dotenv").config();
 const next = require("next");
-
 const targetFolder =
   process.env.NODE_ENV === "production" ? "proBuild" : ".next";
 
@@ -11,7 +10,7 @@ const handler = app.getRequestHandler();
 const express = require("express");
 
 const server = express();
-const port = process.env.DEVELOPMENT_PORT || 3006;
+const port = require("./config/funtion").Random(9000, 3000);
 app
   .prepare()
   .then(() => {

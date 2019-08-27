@@ -10,6 +10,7 @@ module.exports = {
       "@interfaces": path.resolve(root, "./interfaces"),
       "@redux": path.resolve(root, "./redux"),
       "@magaele": path.resolve(root, "./magaele"),
+      "@config": path.resolve(root, "./config"),
       "@components": path.resolve(root, "./components")
     }
   }

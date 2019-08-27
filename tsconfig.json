@@ -3,7 +3,10 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -17,20 +20,43 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@root/*": ["./*"],
-      "@components/*": ["./components/*"],
-      "@constants/*": ["./constants/*"],
-      "@interfaces/*": ["./interfaces/*"],
-      "@redux/*": ["./redux/*"],
-      "@magaele/*": ["./magaele/*"],
-      "@config/*": ["./config/*"],
-      "Utilities/*": ["./utils/*"]
+      "@root/*": [
+        "./*"
+      ],
+      "@components/*": [
+        "./components/*"
+      ],
+      "@constants/*": [
+        "./constants/*"
+      ],
+      "@interfaces/*": [
+        "./interfaces/*"
+      ],
+      "@redux/*": [
+        "./redux/*"
+      ],
+      "@magaele/*": [
+        "./magaele/*"
+      ],
+      "@config/*": [
+        "./config/*"
+      ],
+      "Utilities/*": [
+        "./utils/*"
+      ]
     },
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["./**/*"],
-  "exclude": ["node_modules/**/*", "config/templates/**/*", ".storybook/*"]
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "node_modules/**/*",
+    "config/templates/**/*",
+    ".storybook/*",
+    ".config/*"
+  ]
 }
