@@ -14,7 +14,6 @@ interface MyApp_props extends App {
 
 const MyApp: React.FC<MyApp_props> = props => {
   const { Component, pageProps, store } = props;
-  console.log("_app");
   return (
     <Container>
       <link
@@ -30,23 +29,3 @@ const MyApp: React.FC<MyApp_props> = props => {
   );
 };
 export default withRedux(createStore)(withReduxSaga(MyApp));
-
-// export default const MyApp extends App {
-//   // static async getInitialProps({ Component, router, ctx }: defaultProps) {
-//   //   let pageProps = {};
-
-//   //   if (Component.getInitialProps) {
-//   //     pageProps = await Component.getInitialProps(ctx);
-//   //   }
-
-//   //   console.log(Component, router, ctx);
-//   //   return { pageProps };
-//   // }
-
-//     const { Component, pageProps } = this.props;
-//     return (
-//       <Container>
-//         <Component {...pageProps} />
-//       </Container>
-//     );
-// }
