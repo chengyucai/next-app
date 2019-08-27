@@ -9,9 +9,14 @@ const common = require(path.resolve(root, "config/webpack.commons.js"));
 
 module.exports = withCSS(
   withSass({
-    webpack(config, options) {
+    webpack(config) {
+      // const options = {
+      //   dist: "nextBuild"
+      // };
       const mergeConfig = merge(common, config);
       return mergeConfig;
-    }
+    },
+    distDir: process.env.NODE_ENV === "production" ? "proBuild" : "devBuild",
+    generateInDevMode: false
   })
 );

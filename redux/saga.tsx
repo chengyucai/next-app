@@ -10,3 +10,7 @@ function* rootSaga() {
 }
 
 export default rootSaga;
+
+export function* helloSaga(): any {
+  console.log("hello Sagas!");
+}

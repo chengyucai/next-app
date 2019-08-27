@@ -14,6 +14,8 @@
 
 # production
 /build
+/proBuild
+/devBuild
 
 # misc
 .DS_Store
