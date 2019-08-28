@@ -1,2 +1,2 @@
-import Module from "./components/Module";
+import Module from './components/Module';
 export default Module;

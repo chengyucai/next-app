@@ -20,7 +20,7 @@ $classname: 'bt_bsic';
 
 
 .#{$classname} {
-    
+
     color: #000;
     background-color: #fff0;
     width: fit-content;
@@ -29,12 +29,12 @@ $classname: 'bt_bsic';
     @include flexcc;
     display: inline-flex;
 
-    &.Outlined{
+    &.Outlined {
         border: solid 2px #000;
         padding: 3px 8px;
     }
 
-    &.Contained{
+    &.Contained {
         color: #fff;
         background-color: #000;
     }
@@ -53,4 +53,6 @@ $classname: 'bt_bsic';
 
 
 
-};
+}
+
+;
