@@ -23,7 +23,7 @@ module.exports = {
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-var-requires": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
   },
   settings: {
     react: {

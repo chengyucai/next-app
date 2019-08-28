@@ -1,5 +1,6 @@
 import actionTypes from "@constants/actionType";
 import { IAction } from "@interfaces/IreducerAction";
+
 export const initialState: any = {
   count: 0
 };
@@ -7,9 +8,11 @@ export const initialState: any = {
 function reducer(state = initialState, action: IAction) {
   switch (action.type) {
     case actionTypes.INCREMENT:
+      let time = Date.now();
+      if (action.payload) time = action.payload.time;
       return {
         ...state,
-        ...{ count: state.count + 1 }
+        ...{ count: time }
       };
 
     case actionTypes.DECREMENT:
