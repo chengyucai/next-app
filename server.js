@@ -44,6 +44,9 @@ app
     // if (process.env.NODE_ENV === 'development') {
 
     const cors = require("cors");
+    const apiRouter = require("./test/data");
+
+    server.use("/api", apiRouter(express.Router()));
 
     server.use(cors());
 
