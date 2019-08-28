@@ -10,7 +10,11 @@ const handler = app.getRequestHandler();
 const express = require("express");
 
 const server = express();
-const port = require("./config/funtion").Random(9000, 3000);
+const port =
+  process.env.NODE_ENV !== "production"
+    ? process.env.DEVELOPMENT_PORT || 3000
+    : process.env.PRODUCTION_PORT || 80;
+
 app
   .prepare()
   .then(() => {
