@@ -5,7 +5,7 @@ const styles = require('../css.scss');
 interface Props {
     className?: string;
     size?: string;
-    word?: string;
+    word: string;
     color?: string;
 }
 

@@ -20,12 +20,14 @@ $classname: 'bt_bsic';
 
 
 .#{$classname} {
+    width: fit-content;
+    width: fit-content;
 
     color: #000;
     background-color: #fff0;
-    width: fit-content;
-    width: fit-content;
-    padding: 5px 10px;
+    font-size: $font-size;
+    line-height: $font-size;
+    padding: 8px 12px;
     @include flexcc;
     display: inline-flex;
 
@@ -37,6 +39,10 @@ $classname: 'bt_bsic';
     &.Contained {
         color: #fff;
         background-color: #000;
+    }
+
+    .ic_xicn {
+        margin-right: 6px;
     }
 
     @media screen and (min-width: $screen-tablet) {

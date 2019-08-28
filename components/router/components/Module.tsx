@@ -1,8 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
-import Btn from '@components/bt_bsic/';
-import { Mode } from '@components/bt_bsic/components/Module';
+import Btn, { Mode } from '@components/bt_bsic/';
 import '../css.scss';
 
 const Module = () => {

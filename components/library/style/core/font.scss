@@ -1,4 +1,4 @@
-@mixin font--size {
+@mixin font--size($font-size) {
     font-size: $font-size;
 
     &.x75 {
