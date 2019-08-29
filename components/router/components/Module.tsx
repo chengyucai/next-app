@@ -6,6 +6,7 @@ import '../css.scss';
 
 const Module = () => {
     const classname = 'routes';
+    const [clik, setclik] = React.useState('Home');
     const PageList = [
         {
             cate: 'Home',
@@ -264,7 +265,12 @@ const Module = () => {
                         return (
                             <div key={index}>
                                 <Link {...data.link}>
-                                    <a>{data.title}</a>
+                                    <a
+                                        className={classNames({ link: data.title === clik })}
+                                        onClick={() => setclik(data.title)}
+                                    >
+                                        {data.title}
+                                    </a>
                                 </Link>
                             </div>
                         );

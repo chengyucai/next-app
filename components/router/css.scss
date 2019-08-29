@@ -45,6 +45,10 @@ $classname: 'routes';
                 width: -webkit-fill-available;
                 text-decoration: none;
                 color: map-get($Dark_green, "Main");
+
+                &.link {
+                    color: gold;
+                }
             }
         }
     }
