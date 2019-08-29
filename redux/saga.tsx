@@ -37,7 +37,24 @@ function* getUserAsync(action: any): any {
     } else yield put({ type: actionTypes.SET_USER, payload: { userData: userJson } });
 }
 
+function* infinityAdd(): any {
+    let a = 0;
+    while (a < 20) {
+        yield delay(100);
+        yield put({ type: actionTypes.INCREMENT });
+        a++;
+    }
+}
+
 export default function* rootSaga() {
     yield takeLatest('FETCH_USER', getUserAsync);
     yield takeEvery(actionTypes.TIME, incrementAsync);
+    while (true) {
+        yield take(actionTypes.START_INFINITY);
+        const infinityTask = yield call(infinityAdd);
+
+        // yield take(actionTypes.STOP_INFINITY);
+        // console.log(345);
+        // yield cancel(infinityTask);
+    }
 }

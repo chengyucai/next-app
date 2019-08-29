@@ -6,6 +6,8 @@ const actionTypes = {
     TIME: 'TIME',
     SET_TITLE: 'SET_TITLE',
     SET_USER: 'SET_USER',
+    START_INFINITY: 'START_INFINITY',
+    STOP_INFINITY: 'STOP_INFINITY',
 };
 
 export default actionTypes;
