@@ -258,9 +258,9 @@ const Module = () => {
         <div className={classNames(classname)}>
             <Btn word={'Slide'} mode={Mode.Contained} />
             <div className={classNames(`${classname}-list`)}>
-                {PageList.map((table: any) => {
-                    // const Menu = table.subMenu.map((data: any, index: number) => {
-                    return table.subMenu.map((data: any, index: number) => {
+                {PageList.map((table: any, index: number) => {
+                    const Menu = table.subMenu.map((data: any, index: number) => {
+                        // return table.subMenu.map((data: any, index: number) => {
                         return (
                             <div key={index}>
                                 <Link {...data.link}>
@@ -269,12 +269,12 @@ const Module = () => {
                             </div>
                         );
                     });
-                    // return (
-                    //   <>
-                    //     <h3 key={index}>{table.cate}</h3>
-                    //     {Menu}
-                    //   </>
-                    // );
+                    return (
+                        <React.Fragment key={index}>
+                            <h3>{table.cate}</h3>
+                            {Menu}
+                        </React.Fragment>
+                    );
                 })}
             </div>
         </div>

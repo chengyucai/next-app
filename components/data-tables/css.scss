@@ -1,4 +1,5 @@
 @import '@components/library/style/core/var.scss';
+@import '@components/library/style/core/color.scss';
 @import '@components/library/style/function/flex.scss';
 @import '@components/library/style/function/screen.scss';
 
@@ -15,11 +16,8 @@ $classname: 'data-tables';
  * 2. 在設計RWD時，請在每個selector內加上media query，而不是在media query內有selector
  * 3. 下media query時請依手機優先的設計方法來設計
  */
-$Container:rgba(54, 54, 64, 1);
-$Header_text: rgba(255, 255, 255, 0.6);
-$Table_text: rgba(255, 255, 255, 1);
-$Divider: rgba(255, 255, 255, 0.12);
-$Rally_green: #1eb980;
+
+
 
 %th_td {
     padding: 0 16px;
@@ -56,15 +54,15 @@ $Rally_green: #1eb980;
 %checkbox {
     .check_box {
         margin: 0 12px;
-        border: solid 2px $Table_text;
-        background-color: $Rally_green;
+        border: solid 2px map-get($Dark_green, "Table_text");
+        background-color: map-get($Dark_green, "Main");
 
         .ic_xicn.x1 {
-            color: $Table_text;
+            color: map-get($Dark_green, "Table_text");
         }
 
         &.none {
-            background-color: $Container;
+            background-color: map-get($Dark_green, "Container");
         }
     }
 }
@@ -77,16 +75,16 @@ $Rally_green: #1eb980;
 
     >table {
 
-        background-color: $Container;
+        background-color: map-get($Dark_green, "Container");
 
 
 
         >tr {
 
-            border-bottom: solid 0.8px $Divider;
+            border-bottom: solid 0.8px map-get($Dark_green, "Divider");
 
             td {
-                color: $Table_text;
+                color: map-get($Dark_green, "Table_text");
                 height: 56px;
                 @extend %th_td;
 
@@ -96,7 +94,7 @@ $Rally_green: #1eb980;
 
             th {
                 height: 52px;
-                color: $Header_text;
+                color: map-get($Dark_green, "Header_text");
                 @extend %th_td;
             }
         }
