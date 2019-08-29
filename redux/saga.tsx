@@ -1,5 +1,5 @@
 /* global fetch */
-import { takeEvery, takeLatest, take, put, call, delay } from 'redux-saga/effects';
+import { takeEvery, takeLatest, put, call, delay, take, fork, cancel } from 'redux-saga/effects';
 import es6promise from 'es6-promise';
 
 import actionTypes from '@constants/actionType';
@@ -13,7 +13,7 @@ function* incrementAsync(action: any): any {
     const time = Date.now();
     console.log(time);
     yield delay(2000);
-    yield put({ type: actionTypes.INCREMENT, payload: { time: time } });
+    yield put({ type: actionTypes.TIME_ASYNC, payload: { time: time } });
 }
 
 function* getUserAsync(action: any): any {
@@ -38,6 +38,6 @@ function* getUserAsync(action: any): any {
 }
 
 export default function* rootSaga() {
-    yield takeEvery(actionTypes.INCREMENT_ASYNC, incrementAsync);
     yield takeLatest('FETCH_USER', getUserAsync);
+    yield takeEvery(actionTypes.TIME, incrementAsync);
 }

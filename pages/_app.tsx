@@ -17,7 +17,7 @@ const MyApp: React.FC<MyApp_props> = props => {
     const { Component, pageProps, store } = props;
 
     // eslint-disable-next-line prettier/prettier
-  const action = (type: any, payload: {} = {}) => store.dispatch({ type, payload });
+    const action = (type: any, payload: {} = {}) => store.dispatch({ type, payload });
 
     return (
         <Container>

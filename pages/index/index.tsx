@@ -35,8 +35,8 @@ const Home = (props: any) => {
                 <button style={{ padding: '5px', margin: '5px' }} onClick={() => action(actionTypes.RESET)}>
                     Reset
                 </button>
-                <button style={{ padding: '5px', margin: '5px' }} onClick={() => action(actionTypes.INCREMENT_ASYNC)}>
-                    +1 Async
+                <button style={{ padding: '5px', margin: '5px' }} onClick={() => action(actionTypes.TIME_ASYNC)}>
+                    Time Async
                 </button>
             </div>
             <div className="input">

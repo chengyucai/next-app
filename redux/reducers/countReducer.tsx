@@ -8,8 +8,13 @@ export const initialState: any = {
 function reducer(state = initialState, action: IAction) {
     switch (action.type) {
         case actionTypes.INCREMENT:
-            let time = Date.now();
-            if (action.payload) time = action.payload.time;
+            return {
+                ...state,
+                ...{ count: state.count + 1 },
+            };
+
+        case actionTypes.TIME_ASYNC:
+            const time = action.payload.time ? action.payload.time : Date.now();
             return {
                 ...state,
                 ...{ count: time },
