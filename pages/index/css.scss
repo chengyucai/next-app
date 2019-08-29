@@ -1,7 +1,27 @@
-$classname: "home_";
+$classname: 'home_';
 
 .#{$classname} {
-  > .title {
-    text-align: center;
-  }
+    font-family: 'Microsoft JhengHei';
+    > .title {
+        text-align: center;
+    }
+
+    > .input {
+        text-align: center;
+        margin: 10px;
+        box-sizing: border-box;
+    }
+    > .userinfo {
+        margin: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 400px;
+        text-align: center;
+        background: lightgray;
+        font-size: 20px;
+        > div {
+            margin: 10px auto;
+            font-size: 16px;
+        }
+    }
 }

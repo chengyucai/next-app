@@ -8,16 +8,23 @@ import './css.scss';
 
 const Home = (props: any) => {
     const classnames = 'home_';
-    const { count } = useSelector((state: { countState: any }) => state.countState);
+    const { countState, userState } = useSelector((state: { countState: any; userState: any }) => state);
+
+    const [userid, setUserid] = React.useState('');
 
     const { action } = props;
+
+    const fetchUser = () => {
+        console.log('USER : ', userid);
+        action('FETCH_USER', { userID: userid });
+    };
 
     return (
         <div className={classNames(classnames)}>
             <Head>
                 <title>首頁</title>
             </Head>
-            <div className="title">首頁{count}</div>
+            <div className="title">首頁{countState.count}</div>
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
                 <button style={{ padding: '5px', margin: '5px' }} onClick={() => action(actionTypes.INCREMENT)}>
                     +1
@@ -32,6 +39,19 @@ const Home = (props: any) => {
                     +1 Async
                 </button>
             </div>
+            <div className="input">
+                <input type="text" onChange={e => setUserid(e.target.value)} />
+                <button onClick={() => fetchUser()}>送出</button>
+            </div>
+            {userState.userData ? (
+                <div className="userinfo">
+                    {userState.userData.name || userState.userData.login}
+                    <div>{userState.userData.id}</div>
+                    <div>
+                        <a href={userState.userData.url}>{userState.userData.url}</a>
+                    </div>
+                </div>
+            ) : null}
         </div>
     );
 };
