@@ -8,8 +8,10 @@ const actionTypes = {
     SET_USER: 'SET_USER',
     START_INFINITY: 'START_INFINITY',
     STOP_INFINITY: 'STOP_INFINITY',
-    LOGIN_OK: 'LOGIN_OK',
+
     LOGOUT_OK: 'LOGOUT_OK',
+    LOGIN_OK: 'LOGIN_OK',
+    LOGIN: 'LOGIN',
 };
 
 export default actionTypes;

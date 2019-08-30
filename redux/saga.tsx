@@ -3,7 +3,6 @@ import { takeEvery, takeLatest, put, call, delay, take, fork, cancel } from 'red
 import es6promise from 'es6-promise';
 
 import actionTypes from '@constants/actionType';
-
 // import "isomorphic-unfetch";
 
 es6promise.polyfill();
@@ -37,12 +36,31 @@ function* getUserAsync(action: any): any {
     } else yield put({ type: actionTypes.SET_USER, payload: { userData: userJson } });
 }
 
-function* infinityAdd(): any {
-    let a = 0;
-    while (a < 20) {
-        yield delay(100);
-        yield put({ type: actionTypes.INCREMENT });
-        a++;
+function* login(payload: { userID: string; userPass: string }): any {
+    const { userID, userPass } = payload;
+    // console.log('ID', userID, 'Pass', userPass);
+    const userJson = yield fetch(`http://${window.location.host}/api/users`)
+        .then(res => {
+            if (res.status !== 200) throw res;
+            return res.json();
+        })
+        .catch(err => {
+            return {
+                status: err.status,
+                statusText: err.statusText,
+            };
+        });
+
+    const user = userJson.data.find(function(user: any) {
+        return user.userID === userID;
+    });
+
+    yield delay(1000);
+    // console.log(user);
+    if (user !== undefined && user.userPass === userPass) {
+        yield put({ type: actionTypes.LOGIN_OK });
+    } else {
+        yield put({ type: actionTypes.LOGOUT_OK });
     }
 }
 
@@ -50,11 +68,11 @@ export default function* rootSaga() {
     yield takeLatest('FETCH_USER', getUserAsync);
     yield takeEvery(actionTypes.TIME, incrementAsync);
     while (true) {
-        yield take(actionTypes.START_INFINITY);
-        const infinityTask = yield call(infinityAdd);
+        const { payload } = yield take(actionTypes.LOGIN);
+        yield call(login, payload);
 
-        // yield take(actionTypes.STOP_INFINITY);
-        // console.log(345);
+        // yield take(actionTypes.LOGOUT_OK);
+        // console.log('OK');
         // yield cancel(infinityTask);
     }
 }
