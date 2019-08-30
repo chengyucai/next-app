@@ -6,6 +6,7 @@ import Router from '@components/router';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 import createStore from '@root/redux/store';
+import Header from '@components/hd_test';
 
 interface MyApp_props extends App {
     Component: any;
@@ -26,6 +27,7 @@ const MyApp: React.FC<MyApp_props> = props => {
             </Head>
             <Provider store={store}>
                 {process.env.NODE_ENV === 'development' && <Router />}
+                <Header action={action} />
                 <Component {...pageProps} action={action} />
             </Provider>
         </Container>
