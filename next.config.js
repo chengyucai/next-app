@@ -6,14 +6,19 @@ const withCSS = require('@zeit/next-css');
 
 const root = path.resolve('./');
 const common = require(path.resolve(root, 'config/webpack.commons.js'));
-
-module.exports = withCSS(
-    withSass({
-        distDir: process.env.NODE_ENV === 'production' ? 'proBuild' : '.next',
-        generateInDevMode: false,
-        webpack(config) {
-            const mergeConfig = merge(common, config);
-            return mergeConfig;
-        },
-    }),
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: process.env.NODE_ENV === 'production',
+});
+module.exports = withBundleAnalyzer(
+    withCSS(
+        withSass({
+            distDir: process.env.NODE_ENV === 'production' ? 'proBuild' : '.next',
+            generateInDevMode: false,
+            webpack(config) {
+                const mergeConfig = merge(common, config);
+                return mergeConfig;
+            },
+        }),
+    ),
 );
+// module.exports.push(withBundleAnalyzer({}));

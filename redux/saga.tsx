@@ -2,7 +2,7 @@
 import { takeEvery, takeLatest, put, call, delay, take, fork, cancel } from 'redux-saga/effects';
 import es6promise from 'es6-promise';
 
-import actionTypes from '@constants/actionType';
+import actionTypes, { alert_list } from '@constants/actionType';
 // import "isomorphic-unfetch";
 
 es6promise.polyfill();
@@ -58,9 +58,24 @@ function* login(payload: { userID: string; userPass: string }): any {
     yield delay(1000);
     // console.log(user);
     if (user !== undefined && user.userPass === userPass) {
-        yield put({ type: actionTypes.LOGIN_OK });
+        const Datajson = yield fetch(`http://${window.location.host}/api/usersData`)
+            .then(res => {
+                if (res.status !== 200) throw res;
+                return res.json();
+            })
+            .catch(err => {
+                return {
+                    status: err.status,
+                    statusText: err.statusText,
+                };
+            });
+        const userdata = Datajson.data.find(function(user: any) {
+            return user.userID === userID;
+        });
+        // console.log(userdata);
+        yield put({ type: actionTypes.LOGIN_OK, payload: { alert: alert_list.Login, data: userdata } });
     } else {
-        yield put({ type: actionTypes.LOGOUT_OK });
+        yield put({ type: actionTypes.LOGOUT_OK, payload: { alert: alert_list.Login_fail } });
     }
 }
 

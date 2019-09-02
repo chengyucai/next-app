@@ -84,6 +84,42 @@ $classname: 'hd_test';
 
     }
 
+    >div.alert_tool {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: -webkit-fill-available;
+        @include flexcc;
+
+        >span {
+            background-color: #0005;
+            color: #fff;
+            font-size: $font-size;
+            padding: 5px 10px;
+            animation: alert 1s linear alternate;
+            transform: translateY(-100%);
+            animation-iteration-count: 2;
+            border-radius: 0 0 5px 5px;
+        }
+
+        @keyframes alert {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            30%,
+            100% {
+                transform: translateY(0%);
+            }
+
+        }
+
+        &.none {
+            display: none;
+        }
+    }
+
     @media screen and (min-width: $screen-tablet) {
         // style on tablet device
     }

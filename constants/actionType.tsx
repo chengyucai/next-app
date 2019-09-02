@@ -12,6 +12,14 @@ const actionTypes = {
     LOGOUT_OK: 'LOGOUT_OK',
     LOGIN_OK: 'LOGIN_OK',
     LOGIN: 'LOGIN',
+    LOGIN_ALERT: 'LOGIN_ALERT',
+    SET_USER_DATA: 'SET_USER_DATA',
 };
+
+export enum alert_list {
+    Login = '登入成功',
+    Logout = '登出成功',
+    Login_fail = '登入失敗',
+}
 
 export default actionTypes;

@@ -19,7 +19,8 @@ const Module: React.FC<hd_test_props> = props => {
     const [logPage, setlogPage] = React.useState(false);
     const UserName: any = React.useRef('');
     const UserPass: any = React.useRef('');
-    console.log(loginState.logState);
+    // console.log('logState', loginState.logState);
+    console.log('alert', loginState.alert);
 
     const login_props = {
         word: 'Login',
@@ -37,7 +38,7 @@ const Module: React.FC<hd_test_props> = props => {
         mode: Bt_Mode.Outlined,
         style: { color: '#6200ee', borderColor: '#6200ee' },
         onClick: () => {
-            action(actionTypes.LOGOUT_OK);
+            action(actionTypes.LOGOUT_OK, { alert: '成功登出' });
         },
     };
 
@@ -53,7 +54,9 @@ const Module: React.FC<hd_test_props> = props => {
     return (
         <div className={cx(classname)}>
             <div>{children}</div>
-            <div className={cx('icon', { none: !(loginState.logState === actionTypes.LOGIN_OK) })}>😎</div>
+            <div className={cx('icon', { none: !(loginState.logState === actionTypes.LOGIN_OK) })}>
+                😎{loginState.data && loginState.data.name}
+            </div>
             {loginState.logState === actionTypes.LOGIN_OK ? (
                 <Bt_bsic {...logout_props} />
             ) : (
@@ -61,7 +64,7 @@ const Module: React.FC<hd_test_props> = props => {
             )}
             <div
                 className={cx('login_page', { none: !logPage || loginState.logState === actionTypes.LOGIN_OK })}
-                onClick={(e: any) => {
+                onMouseDown={(e: any) => {
                     e.target.className === 'login_page' && setlogPage(false);
                 }}
             >
@@ -74,6 +77,9 @@ const Module: React.FC<hd_test_props> = props => {
                 </div>
             </div>
             <div className={cx('wait_page', { none: !(loginState.logState === actionTypes.LOGIN) })} />
+            <div className={cx('alert_tool', { none: !loginState.alert })} key={`alert_tool_${loginState.alert}`}>
+                <span>{loginState.alert}</span>
+            </div>
         </div>
     );
 };
