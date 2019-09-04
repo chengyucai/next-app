@@ -1,0 +1,97 @@
+@import '@components/library/style/core/var.scss';
+@import '@components/library/style/core/font.scss';
+@import '@components/library/style/core/basic.scss';
+@import '@components/library/style/function/flex.scss';
+@import '@components/library/style/function/screen.scss';
+
+
+
+/**
+ * Define your classname
+ */
+$classname: 'crol_infinite';
+
+/**
+ * Start your css code
+ * 1. 請在您模組的所有selector都要以模組的classname為前綴名稱  (範例:'bc_coxx')
+ * 2. 在設計RWD時，請在每個selector內加上media query，而不是在media query內有selector
+ * 3. 下media query時請依手機優先的設計方法來設計
+ */
+%def_bnt {
+    content: "";
+    position: absolute;
+    top: calc(50% - 20px);
+    width: 20px;
+    height: 40px;
+    background-color: #0007;
+    cursor: pointer;
+}
+
+.#{$classname} {
+    position: relative;
+    display: flex;
+    width: 500px;
+    max-width: 100%;
+    height: 250px;
+    margin: auto;
+
+    // border: solid 1px #000;
+    overflow: hidden;
+
+    >img {
+        position: inherit;
+        width: 100%;
+        height: 100%;
+
+        transition: transform 0.3s ease;
+        transform: translateX(-100%);
+
+    }
+
+    >div.left_btn {
+        @extend %def_bnt;
+        left: 0;
+    }
+
+    >div.right_btn {
+        @extend %def_bnt;
+        right: 0;
+    }
+
+    @media screen and (min-width: $screen-tablet) {
+        // style on tablet device
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+        // style on desktop device
+    }
+
+    @media screen and (min-width: $screen-lg-desktop) {
+        // style on desktop device
+    }
+
+    .Right-enter {
+        transform: translateX(0%);
+    }
+
+    .Right-enter-active {
+        transform: translateX(-100%);
+    }
+
+    .Right-exit {}
+
+    .Right-exit-active {}
+
+
+    .Left-enter {
+        transform: translateX(-200%);
+    }
+
+    .Left-enter-active {
+        transform: translateX(-100%);
+    }
+
+    .Left-exit {}
+
+    .Left-exit-active {}
+}
