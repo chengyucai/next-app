@@ -34,7 +34,9 @@
     "devDependencies": {
         "@next/bundle-analyzer": "^9.0.5",
         "@storybook/addon-actions": "^5.1.11",
+        "@storybook/addon-backgrounds": "^5.1.11",
         "@storybook/addon-knobs": "^5.1.11",
+        "@storybook/addon-notes": "^5.1.11",
         "@types/classnames": "^2.2.9",
         "@types/next-redux-saga": "^3.0.1",
         "@types/node": "^12.7.2",

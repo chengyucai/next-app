@@ -1,8 +1,9 @@
 import * as React from 'react';
 // import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import cx from 'classnames';
 import IcXicn from '@components/ic_xicn/';
-const styles = require('../css.scss');
+// const styles = require('../css.scss');
+import '../css.scss';
 
 export enum Mode {
     simple,
@@ -22,7 +23,6 @@ interface Props {
 
 const PhotoView: React.FC<Props> = props => {
     const classnames = 'photo_view';
-    const cx = classNames.bind(styles);
     const { src, state, mode, onClickState, children } = props;
     const [imgbig, setimgbig] = React.useState(false);
 

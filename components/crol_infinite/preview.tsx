@@ -11,11 +11,6 @@ storiesOf('carousel(輪播)', module)
                 'https://picsum.photos/500/300',
                 'https://picsum.photos/600/500',
                 'https://picsum.photos/700/500',
-                'https://picsum.photos/500/500',
-                'https://picsum.photos/600/300',
-                'https://picsum.photos/600/400',
-                'https://picsum.photos/500/700',
-                'https://picsum.photos/700/700',
             ]),
         };
         return (

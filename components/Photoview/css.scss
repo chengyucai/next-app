@@ -79,7 +79,10 @@ $classname: 'photo_view';
 
     &>.simple {
         @extend %_picture;
-        border: solid #fff 1px;
+
+        >img {
+            border: solid #fff 1px;
+        }
 
         >.header,
         >.photoList {
