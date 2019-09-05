@@ -3,7 +3,7 @@ import Head from 'next/head';
 import classNames from 'classnames';
 import './css.scss';
 
-const About = () => {
+const MyApp = () => {
     const classnames = 'about_';
 
     return (
@@ -16,4 +16,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default MyApp;
