@@ -6,7 +6,11 @@
         "dev": "cross-env NODE_ENV=development nodemon server.js",
         "build": "cross-env NODE_ENV=production next build ",
         "start": "nodemon server.js",
+        "generate": "node ./config/generate.js",
         "storybook": "start-storybook -p 7700 -c .storybook"
+    },
+    "bin": {
+        "generate": "./config/generate.js"
     },
     "dependencies": {
         "@storybook/react": "^5.1.11",
@@ -58,11 +62,13 @@
         "fork-ts-checker-webpack-plugin": "^1.5.0",
         "next-redux-saga": "^4.0.2",
         "postcss-loader": "^3.0.0",
+        "prompts": "^2.2.1",
         "react-redux": "^7.1.0",
         "redux-devtools-extension": "^2.13.8",
         "redux-logger": "^3.0.6",
         "sass-loader": "^7.3.1",
         "typescript": "^3.5.3",
-        "webpack-merge": "^4.2.1"
+        "webpack-merge": "^4.2.1",
+        "write": "^2.0.0"
     }
 }
