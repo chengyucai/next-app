@@ -1,11 +1,11 @@
-const path = require('path');
 const merge = require('webpack-merge');
-const root = path.resolve(__dirname, '../');
+const Path = require('path');
+const root = Path.resolve(__dirname, '../');
 
 // const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const common = require(path.resolve(root, 'config/webpack.commons.js'));
+const common = require(Path.resolve(root, 'config/webpack.commons.ts'));
 
-module.exports = ({ config, mode }) => {
+module.exports = ({ config }:{ config: any; mode?: any }) => {
     const mergeConfig = merge(common, config);
 
     mergeConfig.module.rules.push({
@@ -58,3 +58,4 @@ module.exports = ({ config, mode }) => {
 
     return mergeConfig;
 };
+export {}

@@ -16,14 +16,14 @@ const port =
 
 const detect = require('detect-port');
 
-const detect_port = function(port) {
-    detect(port, (err, _port) => {
+const detect_port = function(this: any, port: any) {
+    detect(port, (err: any, _port: any) => {
         if (err) {
             console.log(err);
         }
         if (port == _port) {
             console.log(`port: ${port} was not occupied`);
-            this.listen(port, err => {
+            this.listen(port, (err: any) => {
                 if (err) throw err;
                 console.log(`> Ready on http://localhost:${port}`);
             });
@@ -50,11 +50,13 @@ app.prepare()
 
         detect_port.call(server, port);
 
-        server.get('*', (req, res) => {
+        server.get('*', (req: any, res: any) => {
             return handler(req, res);
         });
     })
-    .catch(ex => {
+    .catch((ex: any) => {
         console.error(ex.stack);
         process.exit(1);
     });
+
+export {};

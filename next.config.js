@@ -5,7 +5,7 @@ const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
 
 const root = path.resolve('./');
-const common = require(path.resolve(root, 'config/webpack.commons.js'));
+const common = require(path.resolve(root, 'config/webpack.commons.ts'));
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.NODE_ENV === 'production',
 });
