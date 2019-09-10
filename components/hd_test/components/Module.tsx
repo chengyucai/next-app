@@ -20,7 +20,7 @@ const Module: React.FC<hd_test_props> = props => {
     const UserName: any = React.useRef('');
     const UserPass: any = React.useRef('');
     // console.log('logState', loginState.logState);
-    console.log('alert', loginState.alert);
+    // console.log('alert', loginState.alert);
 
     const login_props = {
         word: 'Login',

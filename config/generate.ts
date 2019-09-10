@@ -13,7 +13,7 @@ const pages_seting = [
         choices: [
             { title: 'add css.scss', value: 'scss', selected: true, description: ' 加上預設CSS ' },
             { title: 'add in router_list', value: 'list', selected: true, description: ' 加入清單 ' },
-            // { title: 'to dynamic_page', value: 'dynamic', description: ' 變為動態router ' },
+            { title: 'to dynamic_page', value: 'dynamic', description: ' 變為動態router ' },
         ],
         hint: '- add select',
     },
@@ -47,6 +47,7 @@ const readdir = (dir: string[]): string[] => {
 };
 
 const writeFile = (url: string, terget: string, replace?: string) => {
+    console.log('.');
     fs.readFile(path.resolve(local, `generate/${terget}`), function(err: any, data: any) {
         if (err) throw err;
         write.sync(url, data.toString().replace(/##_####/g, replace), write_seting);
@@ -110,6 +111,18 @@ const writeFile = (url: string, terget: string, replace?: string) => {
             const index = seting.includes('dynamic') ? '[index]' : 'index';
 
             await writeFile(`${project_Path}/${index}.tsx`, `${index}.txt`, main.project_name);
+
+            if (seting.includes('list')) {
+                const router = await require(local + '/json/router.json');
+                const href = seting.includes('dynamic')
+                    ? `/${main.project_name}/${main.project_name}`
+                    : `/${main.project_name}`;
+                router.push({
+                    cate: `${main.project_name}`,
+                    subMenu: [{ title: `${main.project_name}`, link: { href: href } }],
+                });
+                await write.sync(local + '/json/router.json', JSON.stringify(router), write_seting);
+            }
         } else if (main.path === 'components') {
             await writeFile(`${project_Path}/components/Module.tsx`, 'Module.txt', main.project_name);
 
