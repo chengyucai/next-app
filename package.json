@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "cross-env NODE_ENV=development nodemon server.ts",
-        "build": "cross-env NODE_ENV=production next build ",
+        "build": "next build ",
         "start": "nodemon server.ts",
         "generate": "ts-node ./config/generate.ts",
         "storybook": "start-storybook -p 7700 -c .storybook"

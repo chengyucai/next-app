@@ -3,7 +3,7 @@ const Path = require('path');
 const root = Path.resolve(__dirname, '../');
 
 // const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const common = require(Path.resolve(root, 'config/webpack.commons.ts'));
+const common = require(Path.resolve(root, 'config/webpack.commons.js'));
 
 module.exports = ({ config }:{ config: any; mode?: any }) => {
     const mergeConfig = merge(common, config);
