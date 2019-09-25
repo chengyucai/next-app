@@ -15,6 +15,7 @@
         "sourceMap": true,
         "strict": true,
         "target": "esnext",
+        "typeRoots": ["./node_modules/@types", "./typings"],
         "baseUrl": ".",
         "paths": {
             "@root/*": ["./*"],
@@ -24,6 +25,7 @@
             "@redux/*": ["./redux/*"],
             "@magaele/*": ["./magaele/*"],
             "@config/*": ["./config/*"],
+            "@static/*": ["./static/*"],
             "Utilities/*": ["./utils/*"]
         },
         "forceConsistentCasingInFileNames": true,
@@ -31,6 +33,6 @@
         "resolveJsonModule": true,
         "isolatedModules": true
     },
-    // "include": ["./**/*"],
-    "exclude": ["node_modules/**/*", ".config/templates/**/*", ".config/**/*"]
+    "include": ["./**/*"],
+    "exclude": ["node_modules/**/*", ".config/templates/**/*", "config/generate/*"]
 }

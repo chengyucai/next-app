@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import actionTypes from '@constants/actionType';
 import './css.scss';
+import Apple from '@static/apple.svg';
 // import { useRouter } from "next/router";
 
 const Home = (props: any) => {
@@ -52,6 +53,7 @@ const Home = (props: any) => {
                     </div>
                 </div>
             ) : null}
+            <Apple />
         </div>
     );
 };

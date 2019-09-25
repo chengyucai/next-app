@@ -15,6 +15,10 @@ module.exports = withBundleAnalyzer(
             distDir: process.env.NODE_ENV === 'production' ? 'proBuild' : '.next',
             generateInDevMode: false,
             webpack(config) {
+                config.module.rules.push({
+                    test: /\/config\/generate\/.*.tsx$/,
+                    loader: 'ignore-loader',
+                });
                 const mergeConfig = merge(common, config);
                 return mergeConfig;
             },

@@ -23,7 +23,13 @@ const MyApp: React.FC<MyApp_props> = props => {
     return (
         <Container>
             <Head>
-                <link rel="stylesheet" type="text/css" href={'/_next/static/css/styles.chunk.css?v=' + Date.now()} />
+                {process.env.NODE_ENV === 'development' && (
+                    <link
+                        rel="stylesheet"
+                        type="text/css"
+                        href={'/_next/static/css/styles.chunk.css?v=' + Date.now()}
+                    />
+                )}
             </Head>
             <Provider store={store}>
                 {process.env.NODE_ENV === 'development' && <Router />}
