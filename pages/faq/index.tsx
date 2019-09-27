@@ -1,17 +1,17 @@
 import * as React from 'react';
 import Head from 'next/head';
 import classNames from 'classnames';
-import './css.scss';
+import style from './css.sass';
 
 const About = () => {
     const classnames = 'faq_';
 
     return (
-        <div className={classNames(classnames)}>
+        <div className={classNames(style[classnames])}>
             <Head>
                 <title>常見問題</title>
             </Head>
-            <div className="title">常見問題</div>
+            <div className={style.title}>常見問題</div>
         </div>
     );
 };

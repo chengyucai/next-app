@@ -3,7 +3,7 @@ import Head from 'next/head';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import actionTypes from '@constants/actionType';
-import './css.scss';
+import style from './css.scss';
 import Apple from '@static/apple.svg';
 // import { useRouter } from "next/router";
 
@@ -21,11 +21,11 @@ const Home = (props: any) => {
     };
 
     return (
-        <div className={classNames(classnames)}>
+        <div className={classNames(style[classnames])}>
             <Head>
                 <title>首頁</title>
             </Head>
-            <div className="title">首頁{countState.count}</div>
+            <div className={style.title}>首頁{countState.count}</div>
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
                 <button style={{ padding: '5px', margin: '5px' }} onClick={() => action(actionTypes.INCREMENT)}>
                     +1
@@ -40,12 +40,12 @@ const Home = (props: any) => {
                     Time Async
                 </button>
             </div>
-            <div className="input">
+            <div className={style.input}>
                 <input type="text" onChange={e => setUserid(e.target.value)} />
                 <button onClick={() => fetchUser()}>送出</button>
             </div>
             {userState.userData ? (
-                <div className="userinfo">
+                <div className={style.userinfo}>
                     {userState.userData.name || userState.userData.login}
                     <div>{userState.userData.id}</div>
                     <div>

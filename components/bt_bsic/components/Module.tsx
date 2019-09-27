@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Mode } from '../';
 import Ic_xicn from '@components/ic_xicn/';
-import '../css.scss';
+import style from '../css.scss';
 
 interface Style {
     color?: string;
@@ -29,7 +29,7 @@ const Module: React.FC<bt_bsic_props> = props => {
 
     return (
         <button
-            className={classNames(classname, Mode[mode])}
+            className={classNames(style[classname], style[Mode[mode]])}
             onClick={() => onClick && onClick()}
             style={{ ...btn_Style }}
         >

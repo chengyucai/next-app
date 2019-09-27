@@ -1,9 +1,7 @@
 $classname: 'about_';
 
 .#{$classname} {
-    >.title {
+    > .title {
         text-align: center;
     }
 }
-
-;

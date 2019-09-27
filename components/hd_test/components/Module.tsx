@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import actionTypes from '@constants/actionType';
 import Bt_bsic, { Mode as Bt_Mode } from '@components/bt_bsic';
 // import Ic_xicn from '@components/ic_xicn';
-import '../css.scss';
+import style from '../css.scss';
 
 interface hd_test_props {
     class?: string;
@@ -52,9 +52,9 @@ const Module: React.FC<hd_test_props> = props => {
     };
 
     return (
-        <div className={cx(classname)}>
+        <div className={cx(style[classname])}>
             <div>{children}</div>
-            <div className={cx('icon', { none: !(loginState.logState === actionTypes.LOGIN_OK) })}>
+            <div className={cx(style.icon, { [style.none]: !(loginState.logState === actionTypes.LOGIN_OK) })}>
                 😎{loginState.data && loginState.data.name}
             </div>
             {loginState.logState === actionTypes.LOGIN_OK ? (
@@ -63,7 +63,9 @@ const Module: React.FC<hd_test_props> = props => {
                 <Bt_bsic {...login_props} />
             )}
             <div
-                className={cx('login_page', { none: !logPage || loginState.logState === actionTypes.LOGIN_OK })}
+                className={cx(style.login_page, {
+                    [style.none]: !logPage || loginState.logState === actionTypes.LOGIN_OK,
+                })}
                 onMouseDown={(e: any) => {
                     e.target.className === 'login_page' && setlogPage(false);
                 }}
@@ -76,8 +78,11 @@ const Module: React.FC<hd_test_props> = props => {
                     <Bt_bsic {...submit_props} />
                 </div>
             </div>
-            <div className={cx('wait_page', { none: !(loginState.logState === actionTypes.LOGIN) })} />
-            <div className={cx('alert_tool', { none: !loginState.alert })} key={`alert_tool_${loginState.alert}`}>
+            <div className={cx(style.wait_page, { [style.none]: !(loginState.logState === actionTypes.LOGIN) })} />
+            <div
+                className={cx(style.alert_tool, { [style.none]: !loginState.alert })}
+                key={`alert_tool_${loginState.alert}`}
+            >
                 <span>{loginState.alert}</span>
             </div>
         </div>

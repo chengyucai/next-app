@@ -12,6 +12,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withBundleAnalyzer(
     withCSS(
         withSass({
+            cssModules: true,
+            cssLoaderOptions: {
+                importLoaders: 1,
+                localIdentName: '[local]_[hash:base64:5]',
+            },
             distDir: process.env.NODE_ENV === 'production' ? 'proBuild' : '.next',
             generateInDevMode: false,
             webpack(config) {
@@ -19,6 +24,9 @@ module.exports = withBundleAnalyzer(
                     test: /\/config\/generate\/.*.tsx$/,
                     loader: 'ignore-loader',
                 });
+                config.node = {
+                    fs: 'empty',
+                };
                 const mergeConfig = merge(common, config);
                 return mergeConfig;
             },
