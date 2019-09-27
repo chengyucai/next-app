@@ -83,7 +83,7 @@ export default function* rootSaga() {
     yield takeLatest('FETCH_USER', getUserAsync);
     yield takeEvery(actionTypes.TIME, incrementAsync);
     while (true) {
-        const { payload } = yield take(actionTypes.LOGIN);
+        const { payload }: any = yield take(actionTypes.LOGIN);
         yield call(login, payload);
 
         // yield take(actionTypes.LOGOUT_OK);
