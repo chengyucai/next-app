@@ -3,12 +3,19 @@
     "version": "0.1.0",
     "private": true,
     "sasslintConfig": "PATH/TO/YOUR/CONFIG/FILE",
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@now/next"
+        }
+    ],
     "scripts": {
         "dev": "cross-env NODE_ENV=development nodemon server.ts",
         "build": "next build ",
         "start": "nodemon server.ts",
         "generate": "ts-node ./config/generate.ts",
-        "storybook": "start-storybook -p 7700 -c .storybook"
+        "storybook": "start-storybook -p 7700 -c .storybook",
+        "now-build": "next build"
     },
     "bin": {
         "generate": "./config/generate.ts"
