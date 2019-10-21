@@ -15,7 +15,6 @@ const port =
     process.env.NODE_ENV !== 'production' ? process.env.DEVELOPMENT_PORT || 3000 : process.env.PRODUCTION_PORT || 80;
 
 const detect = require('detect-port');
-
 const detect_port = function(this: any, port: any) {
     detect(port, (err: any, _port: any) => {
         if (err) {

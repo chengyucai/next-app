@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import actionTypes from '@constants/actionType';
 import style from './css.scss';
 import Apple from '@static/apple.svg';
+import WW from '@static/dir_ww.png';
 // import { useRouter } from "next/router";
 
 const Home = (props: any) => {
@@ -53,7 +54,10 @@ const Home = (props: any) => {
                     </div>
                 </div>
             ) : null}
-            <Apple />
+            {/* <Apple />*/}
+            <div className={style.img}>
+                <img alt="df" src={WW} />
+            </div>
         </div>
     );
 };

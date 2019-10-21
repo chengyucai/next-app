@@ -5,17 +5,17 @@ $classname: 'home_';
 .#{$classname} {
     font-family: 'Microsoft JhengHei';
 
-    >.title {
+    > .title {
         text-align: center;
     }
 
-    >.input {
+    > .input {
         text-align: center;
         margin: 10px;
         box-sizing: border-box;
     }
 
-    >.userinfo {
+    > .userinfo {
         margin: auto;
         padding: 20px;
         box-sizing: border-box;
@@ -24,9 +24,25 @@ $classname: 'home_';
         background: lightgray;
         font-size: 20px;
 
-        >div {
+        > div {
             margin: 10px auto;
             font-size: 16px;
+        }
+    }
+    > .img {
+        width: 183px;
+        height: 150px;
+        overflow: hidden;
+        > img {
+            animation: gif steps(19) 2.8s infinite both;
+            @keyframes gif {
+                0% {
+                    transform: translateX(0%);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
         }
     }
 }
