@@ -29,20 +29,4 @@ $classname: 'home_';
             font-size: 16px;
         }
     }
-    > .img {
-        width: 183px;
-        height: 150px;
-        overflow: hidden;
-        > img {
-            animation: gif steps(19) 2.8s infinite both;
-            @keyframes gif {
-                0% {
-                    transform: translateX(0%);
-                }
-                100% {
-                    transform: translateX(-100%);
-                }
-            }
-        }
-    }
 }

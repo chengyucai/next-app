@@ -1,0 +1,7 @@
+.#{NAME} {
+    display: block;
+    width: #{WIDTH}px;
+    height: #{HEIGHT}px;
+    @extend %common;
+    background-position: -#{PX}px -#{PY}px;
+}

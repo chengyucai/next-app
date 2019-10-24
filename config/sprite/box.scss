@@ -1,0 +1,24 @@
+%common {
+    background-size: #{All_W}px;
+    background: url('@static/#{NAME}.png') 0 0 no-repeat;
+}
+
+.#{NAME} {
+    width: #{WIDTH}px;
+    height: #{HEIGHT}px;
+    animation: gif steps(#{TIME}) #{TIMEs}s infinite both;
+    @extend %common;
+
+    &.stop {
+        animation-play-state: paused;
+    }
+
+    @keyframes gif {
+        0% {
+            background-position: 0%;
+        }
+        100% {
+            background-position: 100%;
+        }
+    }
+}

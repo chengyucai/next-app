@@ -1,0 +1,227 @@
+%common {
+    background-size: 5307px;
+    background: url('@static/ww.png') 0 0 no-repeat;
+}
+
+.ww {
+    width: 183px;
+    height: 150px;
+    animation: gif steps(28) 2.9s infinite both;
+    @extend %common;
+
+    &.stop {
+        animation-play-state: paused;
+    }
+
+    @keyframes gif {
+        0% {
+            background-position: 0%;
+        }
+        100% {
+            background-position: 100%;
+        }
+    }
+}
+.ww24 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -0px -0px;
+}
+.ww10 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -183px -0px;
+}
+.ww12 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -366px -0px;
+}
+.ww13 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -549px -0px;
+}
+.ww14 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -732px -0px;
+}
+.ww15 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -915px -0px;
+}
+.ww16 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -1098px -0px;
+}
+.ww17 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -1281px -0px;
+}
+.ww18 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -1464px -0px;
+}
+.ww19 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -1647px -0px;
+}
+.ww20 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -1830px -0px;
+}
+.ww21 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -2013px -0px;
+}
+.ww22 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -2196px -0px;
+}
+.ww23 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -2379px -0px;
+}
+.ww11 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -2562px -0px;
+}
+.ww25 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -2745px -0px;
+}
+.ww26 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -2928px -0px;
+}
+.ww27 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -3111px -0px;
+}
+.ww28 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -3294px -0px;
+}
+.ww29 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -3477px -0px;
+}
+.ww30 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -3660px -0px;
+}
+.ww31 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -3843px -0px;
+}
+.ww32 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -4026px -0px;
+}
+.ww33 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -4209px -0px;
+}
+.ww34 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -4392px -0px;
+}
+.ww35 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -4575px -0px;
+}
+.ww36 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -4758px -0px;
+}
+.ww37 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -4941px -0px;
+}
+.ww38 {
+    display: block;
+    width: 183px;
+    height: 150px;
+    @extend %common;
+    background-position: -5124px -0px;
+}

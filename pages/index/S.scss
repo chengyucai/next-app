@@ -1,0 +1,59 @@
+%common {
+    background-size: 992px;
+    background: url('@static/S.png') 0 0 no-repeat;
+}
+
+.S {
+    width: 198.4px;
+    height: 512px;
+    animation: gif steps(4) 0.5s infinite both;
+    @extend %common;
+
+    &.stop {
+        animation-play-state: paused;
+    }
+
+    @keyframes gif {
+        0% {
+            background-position: 0%;
+        }
+        100% {
+            background-position: 100%;
+        }
+    }
+}
+.virus {
+    display: block;
+    width: 32px;
+    height: 32px;
+    @extend %common;
+    background-position: -0px -0px;
+}
+.global {
+    display: block;
+    width: 64px;
+    height: 64px;
+    @extend %common;
+    background-position: -32px -0px;
+}
+.upload {
+    display: block;
+    width: 128px;
+    height: 128px;
+    @extend %common;
+    background-position: -96px -0px;
+}
+.magnifying-glass {
+    display: block;
+    width: 256px;
+    height: 256px;
+    @extend %common;
+    background-position: -224px -0px;
+}
+.security {
+    display: block;
+    width: 512px;
+    height: 512px;
+    @extend %common;
+    background-position: -480px -0px;
+}

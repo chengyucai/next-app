@@ -1,3 +1,14 @@
 {
-    "data": [{ "in": "./WW/working", "out": "./ww.png" }]
+    "data": [
+        {
+            "in": "./WW/working",
+            "out": "./ww.png",
+            "css": "../pages/index"
+        },
+        {
+            "in": "./SS",
+            "out": "./S.png",
+            "css": "../pages/index"
+        }
+    ]
 }
