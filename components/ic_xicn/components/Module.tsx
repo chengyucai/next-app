@@ -1,6 +1,6 @@
 import * as React from 'react';
-import classnames from 'classnames';
-const styles = require('../css.scss');
+import cx from 'classnames';
+import styles from '../css.scss';
 
 interface Props {
     className?: string;
@@ -12,10 +12,8 @@ interface Props {
 const Module: React.FC<Props> = props => {
     const { className, size, word, color } = props;
 
-    const cx = classnames.bind(styles);
-
     return (
-        <i className={cx('ic_xicn', className, size)} style={{ color: color }}>
+        <i className={cx(styles.ic_xicn, className, styles[`${size}`])} style={{ color: color }}>
             {word}
         </i>
     );

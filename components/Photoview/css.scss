@@ -4,12 +4,9 @@
 // @import '@magaele/core/core/_mixins.scss';
 // @import '@magaele/core/core/_variables.scss';
 
-
 @import '@components/library/style/core/var.scss';
 @import '@components/library/style/function/flex.scss';
 @import '@components/library/style/function/screen.scss';
-
-
 
 /**
  * Define your classname
@@ -34,7 +31,7 @@ $classname: 'photo_view';
     text-align: center;
     margin: 30px 0;
 
-    >img {
+    > img {
         height: auto;
         width: 100%;
         user-select: none;
@@ -51,7 +48,6 @@ $classname: 'photo_view';
             }
         }
     }
-
 }
 
 %header {
@@ -77,21 +73,7 @@ $classname: 'photo_view';
         visibility: hidden;
     }
 
-    &>.simple {
-        @extend %_picture;
-
-        >img {
-            border: solid #fff 1px;
-        }
-
-        >.header,
-        >.photoList {
-            display: none;
-            @extend %header;
-        }
-    }
-
-    &>.card {
+    & > .card {
         @extend %_picture;
         min-width: 90vw;
         min-height: 95vh;
@@ -101,28 +83,14 @@ $classname: 'photo_view';
             border-radius: 5px;
         }
 
-        >.header {
+        > .header {
             @extend %header;
         }
 
-        >.photoList {
+        > .photoList {
             width: initial;
             height: fit-content;
             margin: 10px;
-        }
-    }
-
-    .close_page {
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-weight: bold;
-        color: rgba(255, 255, 255, 0.87);
-        cursor: pointer;
-        padding: 3px;
-
-        @include pc {
-            padding: 6px;
         }
     }
 
@@ -137,7 +105,32 @@ $classname: 'photo_view';
     @media screen and (min-width: $screen-lg-desktop) {
         // style on desktop device
     }
+}
 
+.simple {
+    @extend %_picture;
 
+    > img {
+        border: solid #fff 1px;
+    }
 
+    > .header,
+    > .photoList {
+        display: none;
+        @extend %header;
+    }
+}
+
+.close_page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.87);
+    cursor: pointer;
+    padding: 3px;
+
+    @include pc {
+        padding: 6px;
+    }
 }

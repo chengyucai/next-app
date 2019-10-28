@@ -4,8 +4,6 @@
 @import '@components/library/style/function/flex.scss';
 @import '@components/library/style/function/screen.scss';
 
-
-
 /**
  * Define your classname
  */
@@ -18,7 +16,7 @@ $classname: 'crol_infinite';
  * 3. 下media query時請依手機優先的設計方法來設計
  */
 %def_bnt {
-    content: "";
+    content: '';
     position: absolute;
     top: calc(50% - 20px);
     width: 20px;
@@ -38,22 +36,21 @@ $classname: 'crol_infinite';
     // border: solid 1px #000;
     overflow: hidden;
 
-    >img {
+    > img {
         position: inherit;
         width: 100%;
         height: 100%;
 
         transition: transform 0.5s ease;
         transform: translateX(-100%);
-
     }
 
-    >div.left_btn {
+    > .left_btn {
         @extend %def_bnt;
         left: 0;
     }
 
-    >div.right_btn {
+    > .right_btn {
         @extend %def_bnt;
         right: 0;
     }
@@ -78,10 +75,11 @@ $classname: 'crol_infinite';
         transform: translateX(-100%);
     }
 
-    .Right-exit {}
+    .Right-exit {
+    }
 
-    .Right-exit-active {}
-
+    .Right-exit-active {
+    }
 
     .Left-enter {
         transform: translateX(-200%);
@@ -91,7 +89,9 @@ $classname: 'crol_infinite';
         transform: translateX(-100%);
     }
 
-    .Left-exit {}
+    .Left-exit {
+    }
 
-    .Left-exit-active {}
+    .Left-exit-active {
+    }
 }

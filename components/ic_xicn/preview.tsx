@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import Module from './index';
-import classNames from 'classnames';
-const styles = require('./preview.scss');
+import cx from 'classnames';
+import styles from './preview.scss';
 
 import { withKnobs, text } from '@storybook/addon-knobs';
 
@@ -10,7 +10,6 @@ storiesOf('圖示(iconfont)', module)
     .addDecorator(withKnobs)
     .add('ic_xicn', () => {
         const classnames = 'ic_xicn_preview';
-        const cx = classNames.bind(styles);
 
         const props = {
             word: text('word', '🀘'),
@@ -42,7 +41,7 @@ storiesOf('圖示(iconfont)', module)
         };
 
         return (
-            <div className={cx(classnames, 'module')}>
+            <div className={cx(styles[classnames], styles.module)}>
                 <div>
                     <Module {...props} />
                     <span>我是主角</span>

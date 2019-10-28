@@ -13,7 +13,7 @@ $classname: 'ic_xicn_preview';
         gap: 10pt;
         width: 100%;
 
-        >div {
+        > div {
             @include flexct;
             flex-flow: column;
 
@@ -24,7 +24,4 @@ $classname: 'ic_xicn_preview';
             }
         }
     }
-
 }
-
-;

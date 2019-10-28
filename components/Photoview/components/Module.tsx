@@ -3,7 +3,7 @@ import * as React from 'react';
 import cx from 'classnames';
 import IcXicn from '@components/ic_xicn/';
 // const styles = require('../css.scss');
-import '../css.scss';
+import style from '../css.scss';
 
 export enum Mode {
     simple,
@@ -28,16 +28,16 @@ const PhotoView: React.FC<Props> = props => {
 
     return (
         <div
-            className={cx(classnames, { none: !state })}
+            className={cx(style[classnames], { none: !state })}
             onClick={(e: any) => {
                 e.target.className === 'ic_xicn ic-cross x2' && onClickState(!state);
             }}
         >
-            <IcXicn className="close_page" size={'x15'} word={'✖'} />
-            <div className={cx(Mode[mode])}>
-                <div className="header">{children[0]}</div>
+            <IcXicn className={style.close_page} size={'x15'} word={'✖'} />
+            <div className={cx(style[Mode[mode]])}>
+                <div className={style.header}>{children[0]}</div>
                 <img
-                    className={cx({ big: imgbig })}
+                    className={cx({ [style.big]: imgbig })}
                     src={src}
                     onClick={() =>
                         setimgbig(prev => {
@@ -45,7 +45,7 @@ const PhotoView: React.FC<Props> = props => {
                         })
                     }
                 />
-                <div className={cx('photoList')}>
+                <div className={cx(style.photoList)}>
                     <div className={cx('')}>You might like it</div>
                     {children[1]}
                 </div>

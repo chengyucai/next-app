@@ -1,7 +1,7 @@
 import * as React from 'react';
 import CX from 'classnames';
 // import { Mode } from '../';
-import '../css.scss';
+import style from '../css.scss';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 // const FUNC = require('@config/funtion');
 
@@ -20,7 +20,7 @@ const Module: React.FC<bt_bsic_props> = props => {
     const IMG = (data: (string | undefined)[]) => {
         return data.map((herf: string | undefined, index: number) => {
             return (
-                <CSSTransition timeout={0} classNames={direction ? 'Right' : 'Left'} key={`${herf}${index}`}>
+                <CSSTransition timeout={0} classNames={direction ? style.Right : style.Left} key={`${herf}${index}`}>
                     <img src={herf} key={`${herf}${index}`} />
                 </CSSTransition>
             );
@@ -43,16 +43,16 @@ const Module: React.FC<bt_bsic_props> = props => {
     };
 
     return (
-        <div className={CX(classname)}>
+        <div className={CX(style[classname])}>
             <TransitionGroup component={null}>{IMG(list)}</TransitionGroup>
             <div
-                className={CX('left_btn')}
+                className={CX(style.left_btn)}
                 onClick={() => {
                     pop(list);
                 }}
             />
             <div
-                className={CX('right_btn')}
+                className={CX(style.right_btn)}
                 onClick={() => {
                     shift(list);
                 }}
