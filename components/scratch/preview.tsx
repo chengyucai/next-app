@@ -9,7 +9,7 @@ storiesOf('scratch', module)
         const props = {
             width: number('width', 500),
             height: number('height', 300),
-            lineWidth: number('lineWidth', 40),
+            lineWidth: number('lineWidth', 20),
             mainImg: text(
                 'mainImg',
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDgBDXbpe2fzLEqP_Algq9VqPU8VuwTX4SRExQ17rB0lfulEpwnA&s',

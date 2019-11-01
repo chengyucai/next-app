@@ -1,8 +1,8 @@
 import * as React from 'react';
 // import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import cx from 'classnames';
 import Int_cbox from '@components/int_cbox';
-const styles = require('../css.scss');
+import style from '../css.scss';
 
 interface Props {
     onCallback: (data: any) => void;
@@ -14,7 +14,6 @@ interface Props {
 
 const DataTables: React.FC<Props> = props => {
     const classnames = 'data-tables';
-    const cx = classNames.bind(styles);
 
     const { onCallback, children, tital } = props;
     const [data, setdata] = React.useState(props.data);
@@ -34,7 +33,7 @@ const DataTables: React.FC<Props> = props => {
     const checkbox = (state: boolean, c_key: number, r_key: number) => {
         const defult = {
             word: '✔',
-            className: 'check_box',
+            className: style.check_box,
             size: 'x1',
             length: '24px',
         };
@@ -71,7 +70,7 @@ const DataTables: React.FC<Props> = props => {
     const First = (tital: string[]) => {
         const list = tital.map((data: string, i: number) => {
             return (
-                <th className={cx('tital', type[i], `c_${i}`)} key={`${i}_First`} title={data}>
+                <th className={cx(style.tital, style[type[i]], style[`c_${i}`])} key={`${i}_First`} title={data}>
                     {type[i] === 'boolean' ? checkbox(true, -1, -1) : <span>{data}</span>}
                 </th>
             );
@@ -83,7 +82,7 @@ const DataTables: React.FC<Props> = props => {
         const datalist = alldata.map((list: (number | string | boolean)[], c_i: number) => {
             const tList = list.map((data: number | string | boolean, r_i: number) => {
                 return (
-                    <td className={cx(type[r_i], `c_${r_i}`)} key={`${r_i}_Data`}>
+                    <td className={cx(style[type[r_i]], style[`c_${r_i}`])} key={`${r_i}_Data`}>
                         {typeof data === 'boolean' ? checkbox(data, c_i, r_i) : <span>{data}</span>}
                     </td>
                 );
@@ -94,7 +93,7 @@ const DataTables: React.FC<Props> = props => {
     };
 
     return (
-        <div className={cx(classnames)}>
+        <div className={cx(style[classnames])}>
             <table>
                 {tital && First(tital)}
                 {Data(data)}
