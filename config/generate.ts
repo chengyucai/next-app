@@ -110,7 +110,7 @@ const writeFile = (url: string, terget: string, replace?: string) => {
         if (main.path === 'pages') {
             const index = seting.includes('dynamic') ? '[index]' : 'index';
 
-            await writeFile(`${project_Path}/${index}.tsx`, `${index}.txt`, main.project_name);
+            await writeFile(`${project_Path}/${index}.tsx`, `${index}.tsx`, main.project_name);
 
             if (seting.includes('list')) {
                 const router = await require(local + '/json/router.json');
@@ -124,12 +124,12 @@ const writeFile = (url: string, terget: string, replace?: string) => {
                 await write.sync(local + '/json/router.json', JSON.stringify(router), write_seting);
             }
         } else if (main.path === 'components') {
-            await writeFile(`${project_Path}/components/Module.tsx`, 'Module.txt', main.project_name);
+            await writeFile(`${project_Path}/components/Module.tsx`, 'Module.tsx', main.project_name);
 
-            await writeFile(`${project_Path}/index.tsx`, 'components.txt');
+            await writeFile(`${project_Path}/index.tsx`, 'components.tsx');
 
             if (seting.includes('preview')) {
-                await writeFile(`${project_Path}/preview.tsx`, 'preview.txt', main.project_name);
+                await writeFile(`${project_Path}/preview.tsx`, 'preview.tsx', main.project_name);
             }
 
             if (seting.includes('previewStyle')) {

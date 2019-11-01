@@ -28,7 +28,7 @@ const PhotoView: React.FC<Props> = props => {
 
     return (
         <div
-            className={cx(style[classnames], { none: !state })}
+            className={cx(style[classnames], { [style.none]: !state })}
             onClick={(e: any) => {
                 e.target.className === 'ic_xicn ic-cross x2' && onClickState(!state);
             }}

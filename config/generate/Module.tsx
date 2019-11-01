@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cx from 'classnames';
-import '../css.scss';
+import style from '../css.scss';
 
 interface Props {
     onCallback?: (data: any) => void;
@@ -12,7 +12,7 @@ const Module: React.FC<Props> = props => {
     const { onCallback } = props;
 
     return (
-        <div className={cx(classnames)}>
+        <div className={cx(style[classnames])}>
             <span>{`我是components的${classnames}專案`}</span>
         </div>
     );
