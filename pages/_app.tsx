@@ -19,7 +19,13 @@ const MyApp: React.FC<MyApp_props> = props => {
 
     // eslint-disable-next-line prettier/prettier
     const action = (type: any, payload: {} = {}) => store.dispatch({ type, payload });
-
+    // Router.onRouteChangeStart = () => {
+    //     console.log(`Start`);
+    // };
+    // Router.onRouteChangeComplete = () => {
+    //     console.log(`Complete`);
+    console.log(Router);
+    // };
     return (
         <Container>
             <Head>

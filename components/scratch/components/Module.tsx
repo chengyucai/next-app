@@ -71,7 +71,7 @@ const Module: React.FC<Props> = props => {
                 }}
                 onMouseUp={() => {
                     setcanDraw(false);
-                    if (allC.length >= block * 100) {
+                    if (allC.length >= (block || 0.4) * 100) {
                         defCanvas();
                     }
                     // console.log(allC.length);
@@ -100,9 +100,5 @@ const Module: React.FC<Props> = props => {
 /**
  * Props default value write here
  */
-Module.defaultProps = {
-    block: 0.4,
-    lineWidth: 50,
-};
 
 export default Module;

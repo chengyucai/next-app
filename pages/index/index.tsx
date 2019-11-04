@@ -5,6 +5,9 @@ import { useSelector } from 'react-redux';
 import actionTypes from '@constants/actionType';
 import style from './css.scss';
 import styles from './ww.scss';
+export const config = { amp: 'hybrid' };
+
+import { useAmp } from 'next/amp';
 // import { useRouter } from "next/router";
 
 const Home = (props: any) => {
@@ -54,6 +57,7 @@ const Home = (props: any) => {
                 </div>
             ) : null}
             <div className={styles.ww} />
+            {useAmp() && <img width="300" height="300" src="/S.png" alt="a cool image" />}
         </div>
     );
 };

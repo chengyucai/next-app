@@ -1,17 +1,17 @@
 import * as React from 'react';
 import Head from 'next/head';
 import cx from 'classnames';
-import './css.scss';
+import style from '../css.scss';
 
 const MyApp = () => {
     const classnames = '##_####';
 
     return (
-        <div className={cx(classnames)}>
+        <div className={cx(style[classnames])}>
             <Head>
                 <title>##_####</title>
             </Head>
-            <div className="title">##_####</div>
+            <div className={style.title}>##_####</div>
         </div>
     );
 };
