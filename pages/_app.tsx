@@ -2,7 +2,8 @@ import App, { Container } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 import { Provider } from 'react-redux';
-import Router from '@components/router';
+import Router from 'next/router';
+import RouterList from '@components/router';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 import createStore from '@root/redux/store';
@@ -19,13 +20,25 @@ const MyApp: React.FC<MyApp_props> = props => {
 
     // eslint-disable-next-line prettier/prettier
     const action = (type: any, payload: {} = {}) => store.dispatch({ type, payload });
-    // Router.onRouteChangeStart = () => {
-    //     console.log(`Start`);
-    // };
-    // Router.onRouteChangeComplete = () => {
-    //     console.log(`Complete`);
-    console.log(Router);
-    // };
+    const handleRouteChange = (url: any) => {
+        console.log('App is changing to: ', url);
+    };
+    React.useEffect(() => {
+        Router.events.on('routeChangeStart', handleRouteChange);
+        Router.events.on('routeChangeComplete', handleRouteChange);
+
+        return () => {
+            Router.events.off('routeChangeStart', handleRouteChange);
+            Router.events.off('routeChangeComplete', handleRouteChange);
+        };
+    }, []);
+    // React.useEffect(() => {
+
+    //     return () => {
+    //         Router.events.off('routeChangeStart', handleRouteChange);
+    //     };
+    // }, []);
+
     return (
         <Container>
             <Head>
@@ -38,7 +51,7 @@ const MyApp: React.FC<MyApp_props> = props => {
                 )}
             </Head>
             <Provider store={store}>
-                {process.env.NODE_ENV === 'development' && <Router />}
+                {process.env.NODE_ENV === 'development' && <RouterList />}
                 <Header action={action} />
                 <Component {...pageProps} action={action} />
             </Provider>
