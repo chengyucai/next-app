@@ -27,11 +27,13 @@ const Module: React.FC<Props> = props => {
         const event: any = e || window.event;
         const lastw: number = event.clientX - canvas.offsetLeft; //獲取鼠標相對於canvas畫布的x,y值
         const lasth: number = event.clientY - canvas.offsetTop; //
-        return { cxt, lastw, lasth };
+        return { canvas, cxt, lastw, lasth };
     };
 
     const defCanvas = () => {
-        const { cxt } = drawXY();
+        const { cxt, canvas } = drawXY();
+        canvas.width = width;
+        canvas.height = height;
         cxt.fillStyle = 'lightgray';
         cxt.fillRect(0, 0, width, height);
         cxt.globalCompositeOperation = 'destination-out';
@@ -40,22 +42,18 @@ const Module: React.FC<Props> = props => {
     };
 
     React.useEffect(() => {
-        if (first) {
-            defCanvas();
-            setfirst(false);
-        }
-    });
+        defCanvas();
+        setallC([0]);
+        setfirst(false);
+    }, [width, height]);
     return (
         <div className={cx(style[classnames])} style={{ width: `${width}px`, height: `${height}px` }}>
             <img className={cx({ [style.show]: !first })} src={mainImg} />
             <canvas
                 ref={canvasRef}
-                width={`${width}px`}
-                height={`${height}px`}
                 onMouseDown={() => {
                     setcanDraw(true);
-                    const { cxt, lastw, lasth } = drawXY();
-                    // cxt.lineTo(lastw, lasth);
+                    const { cxt } = drawXY();
                     cxt.beginPath();
                 }}
                 onMouseMove={() => {
@@ -72,9 +70,9 @@ const Module: React.FC<Props> = props => {
                 onMouseUp={() => {
                     setcanDraw(false);
                     if (allC.length >= (block || 0.4) * 100) {
-                        defCanvas();
+                        const { cxt } = drawXY();
+                        cxt.fillRect(0, 0, width, height);
                     }
-                    // console.log(allC.length);
                 }}
                 onTouchStart={(e: any) => {
                     setcanDraw(true);
@@ -83,11 +81,11 @@ const Module: React.FC<Props> = props => {
                     cxt.beginPath();
                 }}
                 onTouchMove={(e: any) => {
-                    // if (canDraw) {
-                    const { cxt, lastw, lasth } = drawXY(e.touches[0]);
-                    cxt.lineTo(lastw, lasth);
-                    cxt.stroke();
-                    // }
+                    if (canDraw) {
+                        const { cxt, lastw, lasth } = drawXY(e.touches[0]);
+                        cxt.lineTo(lastw, lasth);
+                        cxt.stroke();
+                    }
                 }}
                 onTouchEnd={() => {
                     setcanDraw(false);

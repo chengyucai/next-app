@@ -10,6 +10,7 @@ storiesOf('scratch', module)
             width: number('width', 500),
             height: number('height', 300),
             lineWidth: number('lineWidth', 20),
+            block: number('block', 0.5),
             mainImg: text(
                 'mainImg',
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDgBDXbpe2fzLEqP_Algq9VqPU8VuwTX4SRExQ17rB0lfulEpwnA&s',

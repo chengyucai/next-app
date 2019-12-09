@@ -35,7 +35,10 @@ $classname: 'scratch';
 
         z-index: 2;
     }
-
+    .but {
+        position: absolute;
+        right: 0;
+    }
     @media screen and (min-width: $screen-tablet) {
         // style on tablet device
     }
