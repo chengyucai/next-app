@@ -19,7 +19,7 @@ module.exports = withBundleAnalyzer(
                     importLoaders: 1,
                     localIdentName: '[local]_[hash:base64:5]',
                 },
-                // distDir: process.env.NODE_ENV === 'production' ? 'proBuild' : '.next',
+                distDir: process.env.NODE_ENV === 'production' ? 'proBuild' : '.next',
                 generateInDevMode: false,
                 webpack(config) {
                     config.module.rules.push({
