@@ -9,13 +9,13 @@ import withReduxSaga from 'next-redux-saga';
 import createStore from '@root/redux/store';
 import Header from '@components/hd_test';
 
-interface MyApp_props extends App {
+interface MyApp_props {
     Component: any;
     pageProps: any;
     store: any;
 }
 
-const MyApp: React.FC<MyApp_props> = props => {
+const MyApp = (props: MyApp_props) => {
     const { Component, pageProps, store } = props;
 
     // eslint-disable-next-line prettier/prettier
@@ -57,5 +57,15 @@ const MyApp: React.FC<MyApp_props> = props => {
             </Provider>
         </Container>
     );
+};
+
+MyApp.getInitialProps = async ({ Component, ctx }: any) => {
+    let pageProps = {};
+
+    if (Component.getInitialProps) {
+        pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return { pageProps };
 };
 export default withRedux(createStore)(withReduxSaga(MyApp));
