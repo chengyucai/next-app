@@ -3,16 +3,16 @@ import cx from 'classnames';
 import style from '../css.scss';
 
 interface Props {
-    onCallback?: (data: any) => void;
+    onClick?: () => void;
 }
 
 const Module: React.FC<Props> = props => {
     const classnames = '##_####';
 
-    const { onCallback } = props;
+    const { onClick } = props;
 
     return (
-        <div className={cx(style[classnames])}>
+        <div className={cx(style[classnames])} onClick={() => onClick()}>
             <span>{`我是components的${classnames}專案`}</span>
         </div>
     );
@@ -21,6 +21,8 @@ const Module: React.FC<Props> = props => {
 /**
  * Props default value write here
  */
-Module.defaultProps = {};
+Module.defaultProps = {
+    onClick: () => console.log('##_####'),
+};
 
 export default Module;
